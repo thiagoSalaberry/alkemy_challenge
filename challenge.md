@@ -18,6 +18,8 @@ Los archivos fuentes serán utilizados en el proyecto para obtener de ellos todo
   - Datos Argentina - Salas de cine
   - Datos Argentina - Bibliotecas Populares
 
+⚠ Febrero 2025: El gobierno dio de baja la API de las entidades solicitadas y en su lugar cargó los datos en .csv
+
 - Organizar los archivos en rutas siguiendo la siguiente estructura: "categoria/año-mes/categoria-dia-año-mes.csv"
   - Por ejemplo: "museos/2021-noviembre/museos-03-11-2021"
   - Si el archivo existe debe reemplazarse. La fecha de la nomenclatura es la fecha de descarga
