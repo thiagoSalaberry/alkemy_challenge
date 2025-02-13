@@ -1,0 +1,11 @@
+-- CREATE TABLE
+CREATE TABLE IF NOT EXISTS amount(
+    id SERIAL PRIMARY KEY,
+    Categoria VARCHAR(255) NOT NULL,
+    Provincia VARCHAR(255) NOT NULL,
+    Total INT NOT NULL,
+    updated_at TIMESTAMP
+);
+
+-- DROP TABLE
+DROP TABLE IF EXISTS amount;

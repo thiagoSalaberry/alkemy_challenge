@@ -211,8 +211,8 @@ df_bibliotecas = read_csv(
     f"source-files/bibliotecas/2025-febrero", "bibliotecas-12-02-2025.csv")
 df_final_bibliotecas = complete_transform(df_bibliotecas, "bibliotecas")
 
-df_final = pd.concat([df_final_museos, df_final_cines,
-                     df_final_bibliotecas], ignore_index=True)
+normalized_df = pd.concat([df_final_museos, df_final_cines,
+                           df_final_bibliotecas], ignore_index=True)
 # print(df_final)
 
 
@@ -224,7 +224,7 @@ def process_final(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# df_final_combinado = process_final(df_final)
+combined_df = process_final(normalized_df)
 # print(df_final_combinado)
 
 
@@ -237,8 +237,8 @@ def cine_df(df: pd.DataFrame) -> pd.DataFrame:
         butacas=("butacas", "sum"),
         espacio_incaa=("espacio_incaa", lambda x: (x == "Si").sum())
     ).reset_index()
-    df = rename_columns(df, {"provincia": "Provincia", "pantallas": "Cantidad de pantallas",
-                        "butacas": "Cantidad de butacas", "espacio_incaa": "Cantidad de espacios INCAA"})
+    df = rename_columns(df, {"provincia": "Provincia", "pantallas": "Cantidad_de_pantallas",
+                        "butacas": "Cantidad_de_butacas", "espacio_incaa": "Cantidad_de_espacios_INCAA"})
     return df
 
 
