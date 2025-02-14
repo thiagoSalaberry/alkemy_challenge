@@ -1,10 +1,10 @@
 # Ejecución
 
-1. Descargar o clonar este repo
+1. Descargar o clonar este repo ⬇ [alkemy_challenge.rar](alkemy_challenge.rar)
 2. Crear un entorno virtual de la siguiente manera
    En tu consola o línea de comandos de bash:
 
-   # bash
+   ## bash
 
    1️⃣
    python -m venv venv
