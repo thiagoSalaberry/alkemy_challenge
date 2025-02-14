@@ -26,42 +26,6 @@ En este archivo crearé las funciones necesarias para:
 import pandas as pd
 
 
-def delete_columns(df: pd.DataFrame, columns_to_keep: list,) -> pd.DataFrame:
-    df = df[columns_to_keep]
-    return df
-
-
-def define_columns_types(df: pd.DataFrame, columns_types: dict) -> pd.DataFrame:
-    for column, column_type in columns_types.items():
-        if column in df.columns:
-            try:
-                df[column] = df[column].astype(column_type)
-                if column_type == "string":
-                    df[column] = df[column].astype("string")
-                    df[column] = df[column].replace({pd.NA: None})
-            except Exception as e:
-                print(
-                    f"❌ Error al convertir la columna {column} al tipo {column_type}: {e}")
-    return df
-
-
-def rename_columns(df: pd.DataFrame, new_columns_names: dict) -> pd.DataFrame:
-    df = df.rename(columns=new_columns_names)
-    return df
-
-
-def add_column(df: pd.DataFrame, column_name: str, dtype: type, logic: callable) -> pd.DataFrame:
-    if df is None:
-        print("DataFrame inválido")
-        return
-    if column_name not in df.columns:
-        df[column_name] = None
-        return df
-
-    df[column_name] = df.apply(logic, axis=1).astype(dtype)
-    return df
-
-
 columns = {
     "cinemas": {
         "from_csv": ['cod_localidad', 'id_provincia', 'id_departamento', 'categoria',
@@ -158,6 +122,42 @@ column_types: dict = {
     "mail": "string",
     "web": "string",
 }
+
+
+def delete_columns(df: pd.DataFrame, columns_to_keep: list,) -> pd.DataFrame:
+    df = df[columns_to_keep]
+    return df
+
+
+def define_columns_types(df: pd.DataFrame, columns_types: dict) -> pd.DataFrame:
+    for column, column_type in columns_types.items():
+        if column in df.columns:
+            try:
+                df[column] = df[column].astype(column_type)
+                if column_type == "string":
+                    df[column] = df[column].astype("string")
+                    df[column] = df[column].replace({pd.NA: None})
+            except Exception as e:
+                print(
+                    f"❌ Error al convertir la columna {column} al tipo {column_type}: {e}")
+    return df
+
+
+def rename_columns(df: pd.DataFrame, new_columns_names: dict) -> pd.DataFrame:
+    df = df.rename(columns=new_columns_names)
+    return df
+
+
+def add_column(df: pd.DataFrame, column_name: str, dtype: type, logic: callable) -> pd.DataFrame:
+    if df is None:
+        print("DataFrame inválido")
+        return
+    if column_name not in df.columns:
+        df[column_name] = None
+        return df
+
+    df[column_name] = df.apply(logic, axis=1).astype(dtype)
+    return df
 
 
 def full_phone_number(row) -> str:

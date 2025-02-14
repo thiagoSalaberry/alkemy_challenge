@@ -5,7 +5,7 @@ from utils.parse_dates import parse_date
 import pandas as pd
 from sqlalchemy import create_engine
 from configparser import ConfigParser
-from create_tables import create_tables
+from utils.create_tables import create_tables
 
 # Read sensitive data
 parser = ConfigParser()

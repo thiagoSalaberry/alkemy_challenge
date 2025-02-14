@@ -1,4 +1,4 @@
-from connections import conn
+from utils.connections import conn
 
 
 def read_sql(file_path: str, file_name: str) -> str:
@@ -46,6 +46,3 @@ def drop_tables(tables: list) -> None:
         run_query(query, return_data=False, close_on_end=False)
         print(f"✅ La tabla {table} se eliminó con éxito")
     conn.close()
-
-
-# create_tables(sql_tables)

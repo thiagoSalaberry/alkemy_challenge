@@ -10,7 +10,7 @@ try:
     # Conectar a la base de datos
     conn = psycopg2.connect(DB_URL)
 
-    print(f"✅ Conectado a PostgreSQL")
+    print(f"✅ Conectado a PostgreSQL a través de Neon")
 
 except Exception as e:
     print(f"❌ Error al conectar a PostgreSQL: {e}")

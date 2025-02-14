@@ -1,9 +1,27 @@
+# Ejecución
+
+1. Descargar o clonar este repo
+2. Crear un entorno virtual de la siguiente manera
+   En tu consola o línea de comandos de bash:
+
+   # bash
+
+   1️⃣
+   python -m venv venv
+   source venv/Script/activate
+
+   2️⃣
+   pip install -r requirements.txt
+
+   3️⃣
+   py index.py
+
 # Proceso
 
 ## Extracción
 
 1. Descargaremos los 3 archivos propuestos definiendo una función ƒ download_csv(csv_url: str) -> bytes
-2. Los guardaremos de la forma pedida definiendo una función función ƒ save_csv(file_path: str, file_name: str, csv_data: bytes) -> None
+2. Los guardaremos de la forma pedida definiendo una función ƒ save_csv(file_path: str, file_name: str, csv_data: bytes) -> None
 3. Crearemos una función ƒ read_csv(file_path: str, file_name: str) -> pd.DataFrame que devolverá un DataFrame con información cruda
 
 ## Transformación
