@@ -1,6 +1,10 @@
 import psycopg2
+from configparser import ConfigParser
 
-DB_URL = "postgresql://neondb_owner:npg_NcMoxtAnV02E@ep-cold-brook-a4h965ik-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require"
+parser = ConfigParser()
+parser.read('pipeline.conf')
+neon_data = parser["neon"]
+DB_URL = neon_data["DB_URL"]
 
 try:
     # Conectar a la base de datos

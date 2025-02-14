@@ -1,4 +1,4 @@
-from transforms.index import normalized_df, combined_df, df_cines_alone
+from utils.transformation import normalized_df, combined_df, df_cines_alone
 from sqlalchemy import create_engine
 from connections import DB_URL
 

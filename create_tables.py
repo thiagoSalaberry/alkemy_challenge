@@ -20,14 +20,13 @@ def run_query(query: str, return_data: bool = False, close_on_end: bool = True):
         cur = conn.cursor()
         cur.execute(query)
         conn.commit()
-        print(f"✅ Query executed successfully.")
         if return_data:
             return cur.fetchall()
     except Exception as e:
         print(f"❌ Error al ejecutar la query: {e}")
     finally:
+        cur.close()
         if close_on_end:
-            cur.close()
             conn.close()
 
 
@@ -36,7 +35,7 @@ def create_tables(tables: list) -> None:
         sql_script = read_sql("sql", f"{table}")
         query = get_query(sql_script, "CREATE TABLE")
         run_query(query, return_data=False, close_on_end=False)
-        print(f"✅ La tabla {table} se creó con éxito")
+        print(f"📅 La tabla '{table}' se creó con éxito")
     conn.close()
 
 
@@ -48,7 +47,5 @@ def drop_tables(tables: list) -> None:
         print(f"✅ La tabla {table} se eliminó con éxito")
     conn.close()
 
-
-sql_tables = ["amount", "cinemas-data", "normalized"]
 
 # create_tables(sql_tables)

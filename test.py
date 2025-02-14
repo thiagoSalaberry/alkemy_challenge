@@ -1,6 +1,6 @@
 from datetime import date
 from storing.locally import save_file
-from api.request import download_csv
+from utils.extraction import download_csv
 from utils.parse_dates import parse_date
 from configparser import ConfigParser
 
