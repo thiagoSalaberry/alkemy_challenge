@@ -8,12 +8,14 @@
 
    1️⃣
    python -m venv venv
-   source venv/Script/activate
 
    2️⃣
+   source venv/Script/activate
+   
+   3️⃣
    pip install -r requirements.txt
 
-   3️⃣
+   4️⃣
    py index.py
 
 # Proceso
